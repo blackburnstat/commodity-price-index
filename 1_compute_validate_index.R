@@ -24,9 +24,10 @@ library(zoo) # datetime management
 
 # set paths ----
 # please set the correct directory for your machine
+alex<-"C:/Users/alexander.blackburn/United Nations/UNCTAD_GDS-DSIB_STAT-StatsCoop - WorkArea/Production-Tools/New Index 2025/"
 
 
-project_path <- '~/Documents/GitHub/un-commodity-prices/deliverables/'
+project_path <- alex
 
 # source the functions needed
 source(paste0(project_path, 'rscripts/util.R'))
@@ -139,8 +140,8 @@ imf_link <- 'https://www.imf.org/-/media/Files/Research/CommodityPrices/Monthly/
 
 # imf_raw <- read_excel(paste0('YOUR_PATH', "imf.xls"))
 
-imf_loc <- tempfile()
-download.file(imf_link, imf_loc)
+imf_loc <- 'C:/temp/imftemp.csv'
+download.file(imf_link, imf_loc,method="curl")
 # read from temporary path
 imf_raw <- read_excel(path = imf_loc)
 
